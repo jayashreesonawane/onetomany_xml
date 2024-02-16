@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- Define the Cart bean -->
+	<bean class="onetomany_xml.dto.Cart" id="cart">
+		<property name="name" value="Jayashree" />
+		<property name="email" value="jayashree@gmail.com" />
+		<property name="items">
+			<list>
+				<!-- Define the Items beans -->
+				<bean class="onetomany_xml.dto.Items" id="i1">
+					<property name="name" value="Shoes" />
+					<property name="price" value="9870" />
+					<property name="quantity" value="2" />
+				</bean>
+
+				<bean class="onetomany_xml.dto.Items" id="i2">
+					<property name="name" value="Bag" />
+					<property name="price" value="9700" />
+					<property name="quantity" value="2" />
+				</bean>
+
+				<bean class="onetomany_xml.dto.Items" id="i3">
+					<property name="name" value="Watch" />
+					<property name="price" value="987" />
+					<property name="quantity" value="2" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Define the CartDao bean -->
+	<bean class="onetomany_xml.dao.CartDao" id="dao" />
+
+</beans>
